@@ -55,7 +55,7 @@ No expressed opinion: jQuery, Idiomatic
 
 Comments
 --------
-JSDoc conventions: Google, Idiomatic
+[jsDoc](http://usejsdoc.org/) conventions: Google, Idiomatic
 
 In the Idiomatic Style Guide also simpler comments are allowed, but JSDoc encouraged.
 
