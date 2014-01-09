@@ -71,16 +71,16 @@ No expressed opinion: npm, Idiomatic, Crockford
 
 Variable declarations
 ---------------------
-One per line and no commas: Node.js
-```js
-var foo = '';
-var bar = '';
-```
 Multiple in one go with line ending commas like below: Idiomatic, jQuery
 ```js
 var foo = "",
   bar = "",
   quux;
+```
+One per line and no commas: Node.js
+```js
+var foo = '';
+var bar = '';
 ```
 Start with comma: npm
 ```js
