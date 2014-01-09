@@ -158,10 +158,11 @@ No expressed opinion: Google, jQuery, npm, Node, Crockford
 Objects and classes
 -------------------
 
-Use Pascal case (every word's first letter is capitalized): Google, npm, Node
+Use camel case
 ```js
-var ThisIsObject = new Date();
+var thisIsObject = new Date();
 ```
+Pascal case (every word's first letter is capitalized): Google, npm, Node
 No expressed opinion: jQuery, Idiomatic, Crockford
 
 Other
