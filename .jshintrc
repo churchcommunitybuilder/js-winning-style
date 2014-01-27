@@ -1,24 +1,24 @@
 {
-	"browser": true,
-	"couch": false,
-	"devel": false,
-	"dojo": false,
-	"jquery": true,
-	"mootools": false,
-	"node": false,
-	"nonstandard": false,
-	"prototypejs": false,
-	"rhino": false,
-	"worker": false,
-	"wsh": false,
+  "browser": true,
+  "couch": false,
+  "devel": false,
+  "dojo": false,
+  "jquery": true,
+  "mootools": false,
+  "node": false,
+  "nonstandard": false,
+  "prototypejs": false,
+  "rhino": false,
+  "worker": false,
+  "wsh": false,
 
 
-	"nomen": false,
-	"onevar": false,
-	"passfail": false,
-	"white": false,
+  "nomen": false,
+  "onevar": false,
+  "passfail": false,
+  "white": false,
 
-	"maxerr": 100,
+  "maxerr": 100,
     "bitwise"       : true,     // true: Prohibit bitwise operators (&, |, ^, etc.)
     "camelcase"     : true,    // true: Identifiers must be in camelCase
     "curly"         : true,     // true: Require {} for every new block or scope
