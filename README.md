@@ -166,10 +166,6 @@ Pascal case (every word's first letter is capitalized): Google, npm, Node
 
 No expressed opinion: jQuery, Idiomatic, Crockford
 
-Other
------
-Use all-lower-hyphen-css-case for multi-word filenames and config keys: npm
-
 Suggested .jshintrc file
 ========================
 [JSHint](http://www.jshint.com/) is a JavaScript syntax and style checker you can use to alert about code style issues. It integrates well into to many commonly used editors and is a nice way to enforce a common style. See JS Hint documentation for all available options: http://www.jshint.com/docs/#options Below we have created a .jshintrc file that follows the recommendations set above in this article. You can place it in the root folder of your project and JSHint-aware code editors will notice it and follow it though all code in your project.
