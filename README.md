@@ -21,6 +21,7 @@ Two spaces, more if needed to align multiline statements
 ```js
 var a = 9,
     b = 6;
+
 if (true) {
   doThings();
 }
