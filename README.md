@@ -17,122 +17,81 @@ Then of course, there are also the default settings chosen in JavaScript syntax 
 
 Indentation
 -----------
-Two spaces, not longer and no tabs: Google, npm, Node.js, Idiomatic
-
-Tabs: jQuery
-
-Four spaces: Crockford
+Two spaces, more if needed to align multiline statements
+```js
+var a = 9,
+    b = 6;
+if (true) {
+  doThings();
+}
+```
 
 Spaces between arguments and expressions
 ----------------------------------------
-Use sparingly like below: Google, npm, Node.js
+Use sparingly like below
 ```js
 project.MyClass = function(arg1, arg2) {
 ```
-Use excessive white space like below: Idiomatic, jQuery
-```js
-for ( i = 0; i < length; i++ ) {
-```
-No expressed opinion: Crockford
-
-Many guides remind not to have any trailing spaces!
 
 Line length
 -----------
-Max 80 characters: Google, npm, Node.js, Crockford
-
-When wrapping, other indentation than two spaces is allowed to for example align function arguments to the position where the first function argument was. Another option is to use four spaces instead of two when word wrapping long lines.
-
-No expressed opinion: jQuery, Idiomatic
+Max 80 characters
 
 Semicolons
 ----------
-Always use semicolons and don’t rely on implicit insertion: Google, Node.js, Crockford
-
-Don’t use except in some situations: npm
-
-No expressed opinion: jQuery, Idiomatic
+Always use semicolons and don’t rely on implicit insertion
 
 Comments
 --------
-[jsDoc](http://usejsdoc.org/) conventions: Google, Idiomatic
-
-In the Idiomatic Style Guide also simpler comments are allowed, but JSDoc encouraged.
-
-No expressed opinion: npm, Node.js, jQuery, Crockford
+[jsDoc](http://usejsdoc.org/) conventions
 
 Quotes
 ------
-Prefer `'` over `"`: Google, Node.js
-
-Double quotes: jQuery
-
-No expressed opinion: npm, Idiomatic, Crockford
+Prefer `'` over `"`
 
 Variable declarations
 ---------------------
-Multiple in one go with line ending commas like below: Idiomatic, jQuery
+Multiple in one go with line ending commas like below
 ```js
 var foo = "",
   bar = "",
   quux;
 ```
-One per line and no commas: Node.js
-```js
-var foo = '';
-var bar = '';
-```
-Start with comma: npm
-```js
-var foo = ""
-  , bar = ""
-  , quux;
-```
-No expressed opinion: Google, Crockford
 
 Braces
 ------
-Use opening brace on the same line: Google, npm, Node, Idiomatic,  jQuery, Crockford
+Use opening brace on the same line
 ```js
 function thisIsBlock() {
 ```
 These also imply that braces should be used in all cases.
 
-The npm style guide states that braces should only be used if a block needs to wrap to the next line.
-
 Globals
 -------
-Don’t use globals: Google, Crockford
-
-Google says: “Global name conflicts are difficult to debug, and can cause intractable problems when two projects try to integrate. In order to make it possible to share common JavaScript code, we’ve adopted conventions to prevent collisions.”
-
-Crockford states that implied global variables should never be used.
-
-No expressed opinion: Idiomatic, jQuery, npm, Node
+Don’t use globals
 
 Naming
 ======
 
 Variables
 ---------
-
-Start first word lowercase and after that all words start with uppercase letter (Camel case): Google, npm, Node, Idiomatic
+Start first word lowercase and after that all words start with uppercase letter (Camel case)
 ```js
 var foo = "";
 var fooName = "";
 ```
+
 Constants
 ---------
-Use uppercase with underscore: Google, npm, Node, Idiomatic
+Use uppercase with underscore
 ```js
 var CONSTANT = 'VALUE';
 var CONSTANT_NAME = 'VALUE';
 ```
-No expressed opinion: jQuery, Crockford
 
 Functions
 ---------
-Start first word lowercase and after that all words start with uppercase letter (Camel case): Google, npm, Idiomatic, Node
+Start first word lowercase and after that all words start with uppercase letter (Camel case)
 
 Prefer longer, descriptive function names.
 ```js
@@ -145,54 +104,24 @@ function isReady()
 function setName()
 function getName()
 ```
-No expressed opinion: jQuery, Crockford
 
 Arrays
 ------
-Use plural forms: Idiomatic
+Use plural forms
 ```js
 var documents = [];
 ```
-No expressed opinion: Google, jQuery, npm, Node, Crockford
 
 Objects and classes
 -------------------
-
 Use camel case
 ```js
 var thisIsObject = new Date();
 ```
-Pascal case (every word's first letter is capitalized): Google, npm, Node
-
-No expressed opinion: jQuery, Idiomatic, Crockford
 
 Suggested .jshintrc file
 ========================
-[JSHint](http://www.jshint.com/) is a JavaScript syntax and style checker you can use to alert about code style issues. It integrates well into to many commonly used editors and is a nice way to enforce a common style. See JS Hint documentation for all available options: http://www.jshint.com/docs/#options Below we have created a .jshintrc file that follows the recommendations set above in this article. You can place it in the root folder of your project and JSHint-aware code editors will notice it and follow it though all code in your project.
-```json
-{
-  "camelcase" : true,
-  "indent": 2,
-  "undef": true,
-  "quotmark": "single",
-  "maxlen": 80,
-  "trailing": true,
-  "curly": true
-}
-```
-In addition to it you should add into your (browser-read) JavaScript files the following header:
-```js
-/* jshint browser:true, jquery:true */
-```
-In your Node.js files you should add:
-```js
-/*jshint node:true */
-```
-In any kind of JavaScript file it is also good to add the declaration:
-```js
-'use strict';
-```
-This will affect both JSHint and your JavaScript engine, which will become less compliant but run your JavaScript faster.
+[JSHint](http://www.jshint.com/) is a JavaScript syntax and style checker you can use to alert about code style issues. It integrates well into to many commonly used editors and is a nice way to enforce a common style. See JS Hint documentation for all available options: http://www.jshint.com/docs/#options We have created a .jshintrc file that follows the recommendations set above in this article. You can place it in the root folder of your project and JSHint-aware code editors will notice it and follow it though all code in your project.
 
 Automatically JSHint files before Git commit
 If you want to make sure that all of your JS code stays compliant to the style defined in your .jshintrc, you can set the following contents to your .git/hooks/pre-commit file, which is then run each time you try to commit any new of modified files to the project:
