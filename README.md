@@ -55,8 +55,8 @@ Variable declarations
 Multiple in one go with line ending commas like below
 ```js
 var foo = "",
-  bar = "",
-  quux;
+    bar = "",
+    quux;
 ```
 
 Braces
@@ -122,11 +122,11 @@ var thisIsObject = new Date();
 
 Suggested .jshintrc file
 ========================
-[JSHint](http://www.jshint.com/) is a JavaScript syntax and style checker you can use to alert about code style issues. It integrates well into to many commonly used editors and is a nice way to enforce a common style. See JS Hint documentation for all available options: http://www.jshint.com/docs/#options We have created a .jshintrc file that follows the recommendations set above in this article. You can place it in the root folder of your project and JSHint-aware code editors will notice it and follow it though all code in your project.
+[JSHint](http://www.jshint.com/) is a JavaScript syntax and style checker you can use to alert about code style issues. It integrates well into to many commonly used editors and is a nice way to enforce a common style. See JS Hint documentation for all available options: http://www.jshint.com/docs/#options We have created a jshintrc file that follows the recommendations set above in this article. You can place it in the root folder of your project and rename it to '.jshintrc' and JSHint-aware code editors will notice it and follow it though all code in your project.
 
 Automatically JSHint files before Git commit
 If you want to make sure that all of your JS code stays compliant to the style defined in your .jshintrc, you can set the following contents to your .git/hooks/pre-commit file, which is then run each time you try to commit any new of modified files to the project:
-```bash
+```shell
 #!/bin/bash
 # Pre-commit Git hook to run JSHint on JavaScript files.
 #
@@ -143,12 +143,22 @@ then
   exit 1
 fi
 
+which jscs &> /dev/null
+if [ $? -ne 0 ];
+then
+  echo "error: jscs not found"
+  echo "install with: sudo npm install -g jscs"
+  exit 1
+fi
+
 for i in "${filenames[@]}"
 do
   if [[ $i =~ \.js$ ]];
   then
     echo jshint $i
     jshint $i
+    echo jscs $i
+    jscs $i
     if [ $? -ne 0 ];
     then
       exit 1
@@ -157,6 +167,10 @@ do
 done
 ```
 Happy coding!
+
+JSCS
+====
+[jscs](https://github.com/mdevils/node-jscs) is a JavaScript style checker we use to fill in the gaps of where jshint doesn't reach, such as curly brace placement, naming conventions, etc. We've created a jscs.json that follows this guide and it should be placed in the root of your project folder renamed to '.jscs.json'.
 
 
 

@@ -14,6 +14,14 @@ then
   exit 1
 fi
 
+which jscs &> /dev/null
+if [ $? -ne 0 ];
+then
+  echo "error: jscs not found"
+  echo "install with: sudo npm install -g jscs"
+  exit 1
+fi
+
 for i in "${filenames[@]}"
 do
   if [[ $i =~ \.js$ ]];
