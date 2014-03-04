@@ -32,5 +32,11 @@ do
     then
       exit 1
     fi
+    echo jscs $i
+    jscs $i
+    if [ $? -ne 0 ];
+    then
+      exit 1
+    fi
   fi
 done
