@@ -54,8 +54,8 @@ Variable declarations
 ---------------------
 Multiple in one go with line ending commas like below
 ```js
-var foo = "",
-    bar = "",
+var foo = '',
+    bar = '',
     quux;
 ```
 
@@ -78,8 +78,8 @@ Variables
 ---------
 Start first word lowercase and after that all words start with uppercase letter (Camel case)
 ```js
-var foo = "";
-var fooName = "";
+var foo = '';
+var fooName = '';
 ```
 
 Constants
